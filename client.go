@@ -218,7 +218,7 @@ func (c *client) Connect() error {
 		}
 		tlsConfig = &tls.Config{
 			RootCAs:    rootCA,
-			MinVersion: tls.VersionTLS13,
+			MinVersion: tls.VersionTLS12,
 		}
 	}
 	// Use local cert if specified
@@ -232,7 +232,7 @@ func (c *client) Connect() error {
 		} else {
 			tlsConfig = &tls.Config{
 				Certificates: []tls.Certificate{cert},
-				MinVersion:   tls.VersionTLS13,
+				MinVersion:   tls.VersionTLS12,
 			}
 		}
 	}
